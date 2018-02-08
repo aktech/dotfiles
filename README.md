@@ -1,15 +1,6 @@
 # Dot Files
 
-## Automated Installation
-
-Run the following command and relax
-
-```bash
-curl -sL shubham.chaudhary.xyz/dotfiles | bash
-```
-
-See [chaudhary.xyz/dotfiles](http://shubham.chaudhary.xyz/dotfiles) for more info. For manual installation please read the instructions from [wiki](https://github.com/ylogx/dotfiles/wiki/Manual-Installation)
-
+My dotfiles
 
 ## Updating dotfiles
 
@@ -19,3 +10,8 @@ Once you've finished automated installation of these dotfiles, you can run:
 ```sh
 hs pull
 ```
+
+## Credits
+
+This repo is on top of [Shubham's dotfiles](https://github.com/ylogx/dotfiles)
+
