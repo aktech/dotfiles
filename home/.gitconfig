@@ -1,6 +1,6 @@
 [user]
-	name = Shubham Chaudhary
-	email = me@shubhamchaudhary.in
+	name = Amit Kumar
+	email = dtu.amit@gmail.com
 	signingkey = FAB52DCA
 	logallrefupdates=true
 [core]
@@ -31,9 +31,9 @@
 	commitencoding = utf-8
 
 [sendemail]
-	from = Shubham Chaudhary <shubhamchaudhary92@gmail.com>
+	from = Amit Kumar <dtu.amit@gmail.com>
 	smtpserver = smtp.gmail.com
-	smtpuser = shubhamchaudhary92@gmail.com
+	smtpuser = dtu.amit@gmail.com
 	smtpencryption = tls
 	smtppass =
 	chainreplyto = false
@@ -76,7 +76,7 @@
 	changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
 	c = commit
 	ca = commit -a
-#	commitme = commit --author="Shubham Chaudhary <me@shubhamchaudhary.in>"
+#	commitme = commit --author="Amit Kumar <dtu.amit@gmail.com>"
 	currentbranch = rev-parse --abbrev-ref HEAD
 	d = diff                          # diff unstaged changes
 	dc = diff --cached                # diff staged changes
@@ -143,10 +143,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-#[https]
-#	proxy = https://ishubhamch:chaudhary@192.168.60.10:3128
-#[http]
-#	proxy = http://ishubhamch:chaudhary@192.168.60.10:3128
 [merge]
 	tool = vimdiff
 ;[mergetool "vimdiff"]

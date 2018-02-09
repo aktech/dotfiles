@@ -29,5 +29,5 @@
 - name: Change shell to ZSH
   become: yes
   become_method: sudo
-  user: shell=/bin/zsh name=chaudhary
-  # TODO: Change chaudhary to variable user
+  user: shell=/bin/zsh name=aktech
+  # TODO: Change user to variable user

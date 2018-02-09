@@ -15,7 +15,6 @@ fi
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="shubhamchaudhary"
 ZSH_THEME="agnoster-sc"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -220,21 +219,9 @@ export VISUAL=vi
 
 
 # added by travis gem
-[ -f /Users/chaudhary/.travis/travis.sh ] && source /Users/chaudhary/.travis/travis.sh
 
 [ -d "$HOME/.pyenv" ] && export PATH="$HOME/.pyenv/bin:$PATH";
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/chaudhary/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/chaudhary/google-cloud-sdk/path.zsh.inc'
-fi
-
-# The next line enables shell command completion for gcloud.
-#if [ -f /Users/chaudhary/google-cloud-sdk/completion.zsh.inc ]; then
-  #source '/Users/chaudhary/google-cloud-sdk/completion.zsh.inc'
-#fi
-#export PATH="/usr/local/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
 
 # added by Anaconda3 4.2.0 installer

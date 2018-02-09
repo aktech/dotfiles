@@ -37,7 +37,7 @@ ansible-playbook playbooks/${PLAYBOOK_NAME}.yml \
   -c local -i 'localhost,' \
   ${1:-} ${2:-} ${3:-} ${4:-} ${5:-}  # Use as ./run_ansible.sh ...  # Any additional ansible flags
 
-# TODO: Run if not chaudhary in username
+# TODO: Run for any username
 echo 'Please update git credential to your email address now'
 echo 'Current values are:'
 echo `cat ~/.gitconfig | grep 'name =' -A1`

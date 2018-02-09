@@ -2,12 +2,12 @@
 
 source "gpg -d ~/.mutt/passwords.gpg |"
 # Change the following six lines to match your Gmail account details
-set imap_user = "shubham.chaudhary@zomato.com"
+set imap_user = "dtu.amit@gmail.com"
 #set imap_pass = "foobar"
-set smtp_url = "smtp://shubham.chaudhary@zomato.com@smtp.gmail.com:587/"
+set smtp_url = "smtp://dtu.amit@gmail.com@smtp.gmail.com:587/"
 #set smtp_pass = "foobar"
-set from = "shubham.chaudhary@zomato.com"
-set realname = "Shubham Chaudhary"
+set from = "dtu.amit@gmail.com"
+set realname = "Amit Kumar"
 set smtp_authenticators = 'gssapi:login'
 
 # Change the following line to a different editor you prefer.
