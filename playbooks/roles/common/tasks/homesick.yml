@@ -6,7 +6,7 @@
 - name: Add homeshick
   become: false
   git:
-    repo: 'git://github.com/andsens/homeshick.git'
+    repo: 'git@github.com:andsens/homeshick.git'
     dest: $HOME/.homesick/repos/homeshick
     version: master
     track_submodules: yes
@@ -15,7 +15,7 @@
 
 - name: Clone dotfiles files using homesick
   become: false
-  command: ./homeshick clone https://github.com/ylogx/dotfiles.git
+  command: ./homeshick clone git@github.com:aktech/dotfiles.git
   args:
     chdir: ~/.homesick/repos/homeshick/bin
     creates: ~/.homesick/repos/dotfiles

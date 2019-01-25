@@ -37,7 +37,7 @@ def copy_files(filelist):
 
 
 def setup_vim():
-    execute('git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
+    execute('git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/vundle')
     execute('vim +PluginInstall +qa')
 
 
