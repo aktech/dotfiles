@@ -30,7 +30,7 @@ alias aria2cm='aria2c -c -x 16'
 #alias acki='ack --ignore-dir=build'
 alias acki='ack --ignore-dir=build --ignore-dir=doc'
 
-alias c='pygmentize -g'
+alias c='clear'
 alias cats='highlight -O ansi'
 #alias cdw ^defined above
 alias catlatest='cat `ls -t|head -1`'
