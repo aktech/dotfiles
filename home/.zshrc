@@ -68,12 +68,10 @@ plugins=(
     gnu-utils
     golang
     gpg-agent
-    #gradle
     heroku
     history-substring-search
     kubectl
     last-working-dir
-    #lol
     osx
     pip
     pylint
@@ -81,11 +79,9 @@ plugins=(
     sublime
     sudo
     web-search
-    #tmux
     yum
     zsh-completions
     zsh-syntax-highlighting
-    zsh-wakatime
     )
 
 # User configuration
