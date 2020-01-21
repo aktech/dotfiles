@@ -53,8 +53,6 @@
     Plugin 'tpope/vim-sleuth'
     " Show python code coverage
     Plugin 'alfredodeza/coveragepy.vim'
-    " WakaTime programming time calculator
-    Plugin 'wakatime/vim-wakatime'
     " Vim - TMux Navigation using Ctrl-h,j,k,l
     Plugin 'christoomey/vim-tmux-navigator'
     " Android in Vim
