@@ -5,7 +5,7 @@
   register: brew_executable
 
 - name: Install Homebrew
-  shell: yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  shell: yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   when: not brew_executable.stat.exists
 
 - name: Update Homebrew
