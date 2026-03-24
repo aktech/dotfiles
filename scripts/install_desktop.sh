@@ -9,7 +9,7 @@ fi
 
 # Install Ghostty
 install_ghostty() {
-    if command -v ghostty &>/dev/null; then
+    if command -v ghostty &>/dev/null || [ -d "/Applications/Ghostty.app" ]; then
         echo "  skip ghostty (already installed)"
         return
     fi
