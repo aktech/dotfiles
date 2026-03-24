@@ -66,4 +66,6 @@ cat <<'BANNER'
  === done! ===
 
  restart your shell or run: exec zsh
+
+ to install more tools: pixi global install <package>
 BANNER
