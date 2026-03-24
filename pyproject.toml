@@ -1,0 +1,34 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+requires-python = ">= 3.11"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
+
+[tool.pixi.pypi-dependencies]
+dotfiles = { path = ".", editable = true }
+
+[tool.pixi.dependencies]
+python = ">=3.11"
+git = "*"
+tmux = "*"
+neovim = "*"
+starship = "*"
+wget = "*"
+htop = "*"
+curl = "*"
+tree = "*"
+
+[tool.pixi.tasks]
+link = "python scripts/link.py"
+setup = { depends-on = ["link"] }
+test = "python scripts/test_setup.py"

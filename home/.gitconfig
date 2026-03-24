@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Amit Kumar
+	email = aktech@users.noreply.github.com
+# Please adapt and uncomment the following lines:
+#	name = Amit Kumar
+#	email = aktech@users.noreply.github.com
+[core]
+	editor = nvim
+	excludesfile = /Users/aktech/.gitignore

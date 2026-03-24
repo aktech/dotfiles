@@ -1,0 +1,4 @@
+.pixi/*
+!.pixi/config.toml
+.cache
+*.bak
