@@ -19,7 +19,7 @@ install_fonts() {
     mkdir -p "$font_dir"
 
     # Cascadia Code (includes Nerd Font variant)
-    if fc-list 2>/dev/null | grep -qi "Cascadia Code NF"; then
+    if ls "$font_dir"/CascadiaCode*.ttf &>/dev/null; then
         echo "  skip cascadia code (already installed)"
     else
         echo "  installing Cascadia Code NF..."
@@ -36,7 +36,7 @@ install_fonts() {
     fi
 
     # FiraCode Nerd Font
-    if fc-list 2>/dev/null | grep -qi "FiraCode"; then
+    if ls "$font_dir"/FiraCode*.ttf &>/dev/null; then
         echo "  skip fira code (already installed)"
     else
         echo "  installing FiraCode Nerd Font..."
