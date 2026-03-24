@@ -104,7 +104,6 @@ plugins=(git)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 
-export PATH="/Users/aktech/.pixi/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 alias c='clear'
