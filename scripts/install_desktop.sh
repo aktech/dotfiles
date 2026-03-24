@@ -23,10 +23,11 @@ install_fonts() {
         echo "  skip cascadia code (already installed)"
     else
         echo "  installing Cascadia Code NF..."
-        local tmpdir
+        local tmpdir url
         tmpdir=$(mktemp -d)
-        curl -fsSL -o "$tmpdir/cascadia.zip" \
-            "https://github.com/microsoft/cascadia-code/releases/latest/download/CascadiaCode-2404.23.zip"
+        url=$(curl -fsSL https://api.github.com/repos/microsoft/cascadia-code/releases/latest \
+            | grep -o '"browser_download_url": "[^"]*"' | head -1 | cut -d'"' -f4)
+        curl -fsSL -o "$tmpdir/cascadia.zip" "$url"
         unzip -qo "$tmpdir/cascadia.zip" -d "$tmpdir/cascadia"
         cp "$tmpdir"/cascadia/ttf/*.ttf "$font_dir/"
         rm -rf "$tmpdir"
