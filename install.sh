@@ -26,11 +26,11 @@ if ! command -v curl >/dev/null 2>&1; then
 fi
 
 # Install pixi if not available
-if ! command -v pixi >/dev/null 2>&1; then
+if ! command -v pixi >/dev/null 2>&1 && ! [ -x "$HOME/.pixi/bin/pixi" ]; then
     echo "==> Installing pixi..."
-    curl -fsSL https://pixi.sh/install.sh | sh
-    export PATH="$HOME/.pixi/bin:$PATH"
+    PIXI_NO_PATH_UPDATE=1 curl -fsSL https://pixi.sh/install.sh | sh
 fi
+export PATH="$HOME/.pixi/bin:$PATH"
 
 # Install git via pixi if not available
 if ! command -v git >/dev/null 2>&1; then
@@ -38,9 +38,10 @@ if ! command -v git >/dev/null 2>&1; then
     pixi global install git
 fi
 
-# Clone dotfiles
+# Clone or update dotfiles
 if [ -d "$DOTFILES_DIR" ]; then
     echo "==> Updating dotfiles..."
+    git -C "$DOTFILES_DIR" stash --include-untracked 2>/dev/null || true
     git -C "$DOTFILES_DIR" pull
 else
     echo "==> Cloning dotfiles..."
