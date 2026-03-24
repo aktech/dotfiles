@@ -32,9 +32,10 @@ rust = "*"
 
 [tool.pixi.tasks]
 install-omz = "git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh || true"
+install-claude = "command -v claude || curl -fsSL https://claude.ai/install.sh | bash"
 install-desktop = "bash scripts/install_desktop.sh"
 link = "python scripts/link.py"
-setup = { depends-on = ["install-omz", "install-desktop", "link"] }
+setup = { depends-on = ["install-omz", "install-claude", "install-desktop", "link"] }
 test = "python scripts/test_setup.py"
 test-docker = "docker build -t dotfiles-test ."
 zsh = "zsh -l"
