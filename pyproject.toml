@@ -31,8 +31,8 @@ zsh = ">=5.9,<6"
 rust = "*"
 
 [tool.pixi.tasks]
-install-omz = "git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh || true"
-install-claude = "command -v claude || curl -fsSL https://claude.ai/install.sh | bash"
+install-omz = "test -d $HOME/.oh-my-zsh || git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh"
+install-claude = "which claude || curl -fsSL https://claude.ai/install.sh | bash"
 install-desktop = "bash scripts/install_desktop.sh"
 link = "python scripts/link.py"
 setup = { depends-on = ["install-omz", "install-claude", "install-desktop", "link"] }
