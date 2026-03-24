@@ -69,7 +69,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/starship-1.24.2-h10efecc_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.28-h4ee821c_9.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h366c992_103.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/tmux-3.6-hb764a82_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/tmux-3.6a-hb764a82_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tree-2.3.2-hb03c661_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/unibilium-2.1.2-h280c20c_1.conda
@@ -139,7 +139,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/starship-1.24.2-hb1a91c2_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-aarch64-2.28-h585391f_9.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tk-8.6.13-noxft_h0dc03b3_103.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tmux-3.6-h2fb902b_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tmux-3.6a-h2484daf_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tree-2.3.2-he30d5cf_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/unibilium-2.1.2-h80f16a2_1.conda
@@ -193,7 +193,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/rust-std-aarch64-apple-darwin-1.94.0-hf6ec828_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/starship-1.24.2-h9edc125_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tk-8.6.13-h010d191_3.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tmux-3.6-h96f0305_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tmux-3.6a-h95fdb7f_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tree-2.3.2-h84a0fba_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/unibilium-2.1.2-he530434_1.conda
@@ -377,7 +377,7 @@ packages:
 - pypi: ./
   name: dotfiles
   version: 0.1.0
-  sha256: e6a7a5219bd11579d48032c16ca5ac8a2f22a6501a30ca8fc8899cd827fa7d77
+  sha256: 7c6ba2070471ec8dc02cc7f9c540f5461ad9a5663b6438501f5bb0af582edae1
   requires_python: '>=3.11'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/gcc_impl_linux-64-15.2.0-he420e7e_18.conda
   sha256: a088cfd3ae6fa83815faa8703bc9d21cc915f17bd1b51aac9c16ddf678da21e4
@@ -2135,9 +2135,9 @@ packages:
   purls: []
   size: 3127137
   timestamp: 1769460817696
-- conda: https://conda.anaconda.org/conda-forge/linux-64/tmux-3.6-hb764a82_0.conda
-  sha256: 556118e0f5319264fbe8d19ee7826722eb7f69328dcf4ee222928dd296b9958c
-  md5: 1c08de0370f1178ab4f149b5ef13af0f
+- conda: https://conda.anaconda.org/conda-forge/linux-64/tmux-3.6a-hb764a82_0.conda
+  sha256: 2bd7203adb058e8fbf377d21700e438fee031b60fb5fbadb4756bc65a749dad0
+  md5: 0e184cb5be1583e871680caa1bf63813
   depends:
   - __glibc >=2.17,<3.0.a0
   - libevent >=2.1.12,<2.1.13.0a0
@@ -2145,22 +2145,22 @@ packages:
   - ncurses >=6.5,<7.0a0
   license: ISC
   purls: []
-  size: 498644
-  timestamp: 1764159802962
-- conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tmux-3.6-h2fb902b_0.conda
-  sha256: a905155ca419e23f6327bbe3cad90fc3c11ee2da45d1671f7e9e5f6d8060c8e5
-  md5: 2205905c6173dc813ed974c2a8559045
+  size: 500476
+  timestamp: 1766225845848
+- conda: https://conda.anaconda.org/conda-forge/linux-aarch64/tmux-3.6a-h2484daf_0.conda
+  sha256: 4a909e9abeca2c34a4448ce41bb840478a0a77ffcfebe03e3e1176ba04c76faa
+  md5: abbb620f7780334a256d2c9ab7646447
   depends:
   - libevent >=2.1.12,<2.1.13.0a0
   - libgcc >=14
   - ncurses >=6.5,<7.0a0
   license: ISC
   purls: []
-  size: 547178
-  timestamp: 1764159825778
-- conda: https://conda.anaconda.org/conda-forge/osx-arm64/tmux-3.6-h96f0305_0.conda
-  sha256: 36c946da0fd371c5976fd0e434d30a725a93bf0d8c3806d63d0cd6da17e591d7
-  md5: 3ef36fc89af4c33c00b64d0e4f44f051
+  size: 550794
+  timestamp: 1766225862904
+- conda: https://conda.anaconda.org/conda-forge/osx-arm64/tmux-3.6a-h95fdb7f_0.conda
+  sha256: b67c439329006268ae0960020832fc3669c87666a14f39193e174058948d62b4
+  md5: 3a1e6d60d13073abe7d735a25acd0211
   depends:
   - __osx >=11.0
   - libevent >=2.1.12,<2.1.13.0a0
@@ -2168,8 +2168,8 @@ packages:
   - ncurses >=6.5,<7.0a0
   license: ISC
   purls: []
-  size: 424791
-  timestamp: 1764160258334
+  size: 424701
+  timestamp: 1766226555184
 - conda: https://conda.anaconda.org/conda-forge/linux-64/tree-2.3.2-hb03c661_0.conda
   sha256: a7847e23f4c76f76ba7eb6494b9b33eaceeff9beb43040d0f0f5ccdcc2a954f2
   md5: 742c291f75567ae2d4388e9bc795e075
