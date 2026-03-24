@@ -28,7 +28,7 @@ fi
 # Install pixi if not available
 if ! command -v pixi >/dev/null 2>&1 && ! [ -x "$HOME/.pixi/bin/pixi" ]; then
     echo "==> Installing pixi..."
-    PIXI_NO_PATH_UPDATE=1 curl -fsSL https://pixi.sh/install.sh | sh
+    curl -fsSL https://pixi.sh/install.sh | PIXI_NO_PATH_UPDATE=1 sh
 fi
 export PATH="$HOME/.pixi/bin:$PATH"
 
