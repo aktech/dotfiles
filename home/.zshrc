@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -143,7 +143,7 @@ if [ -f '/Users/aktech/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ak
 export PATH="$PATH:/Users/aktech/.lmstudio/bin"
 # End of LM Studio CLI section
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+command -v go &>/dev/null && export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:/opt/homebrew/opt/ruby/bin:$PATH"
 
 # opencode
