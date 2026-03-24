@@ -1,5 +1,7 @@
 # Dotfiles
 
+[![CI](https://github.com/aktech/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/aktech/dotfiles/actions/workflows/ci.yml)
+
 My dotfiles, managed with [pixi](https://pixi.sh).
 
 ## Quick install
