@@ -39,10 +39,29 @@ if ! command -v pixi >/dev/null 2>&1 && ! [ -x "$HOME/.pixi/bin/pixi" ]; then
 fi
 export PATH="$HOME/.pixi/bin:$PATH"
 
-# Install git via pixi if not available
+# Install git if not available
 if ! command -v git >/dev/null 2>&1; then
-    echo "==> Installing git via pixi..."
-    pixi global install git
+    echo "==> Installing git..."
+    case "$(uname -s)" in
+        Darwin)
+            echo "    Installing Xcode Command Line Tools (provides git)..."
+            xcode-select --install 2>/dev/null
+            echo "    Waiting for Xcode CLI tools to install..."
+            echo "    Please follow the dialog, then re-run this script."
+            exit 0
+            ;;
+        *)
+            pixi global install git 2>/dev/null || {
+                if command -v apk >/dev/null 2>&1; then apk add --no-cache git
+                elif command -v apt-get >/dev/null 2>&1; then apt-get update && apt-get install -y git
+                elif command -v dnf >/dev/null 2>&1; then dnf install -y git
+                elif command -v yum >/dev/null 2>&1; then yum install -y git
+                elif command -v pacman >/dev/null 2>&1; then pacman -Sy --noconfirm git
+                else echo "Error: could not install git."; exit 1
+                fi
+            }
+            ;;
+    esac
 fi
 
 # Clone or update dotfiles
