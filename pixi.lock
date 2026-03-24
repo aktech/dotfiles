@@ -5,6 +5,8 @@ environments:
     - url: https://conda.anaconda.org/conda-forge/
     indexes:
     - https://pypi.org/simple
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda
@@ -375,9 +377,8 @@ packages:
 - pypi: ./
   name: dotfiles
   version: 0.1.0
-  sha256: fdb7789bce8b7d267c751a892ed00b2dbfbe0cce40b957f95db243595eb2c817
+  sha256: 88c3ef8b0b10f2a436bfa53aa669cc843228fdd49db85b1c4b0deb4494dc0956
   requires_python: '>=3.11'
-  editable: true
 - conda: https://conda.anaconda.org/conda-forge/linux-64/gcc_impl_linux-64-15.2.0-he420e7e_18.conda
   sha256: a088cfd3ae6fa83815faa8703bc9d21cc915f17bd1b51aac9c16ddf678da21e4
   md5: cf56b6d74f580b91fd527e10d9a2e324
