@@ -54,4 +54,9 @@ cd "$DOTFILES_DIR"
 echo "==> Running setup..."
 pixi run setup
 
-echo "==> Done! Restart your shell or run: exec zsh"
+cat <<'BANNER'
+
+ === done! ===
+
+ restart your shell or run: exec zsh
+BANNER
