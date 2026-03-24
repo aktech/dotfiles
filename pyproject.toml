@@ -21,7 +21,7 @@ dotfiles = { path = ".", editable = true }
 python = ">=3.11"
 git = "*"
 tmux = "*"
-neovim = "*"
+nvim = ">=0.11.6,<0.12"
 starship = "*"
 wget = "*"
 htop = "*"
