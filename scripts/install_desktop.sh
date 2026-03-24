@@ -7,6 +7,50 @@ if [ -n "${CI:-}" ]; then
     exit 0
 fi
 
+# Install fonts (Cascadia Code NF for ghostty + starship icons)
+install_fonts() {
+    local font_dir
+    case "$(uname -s)" in
+        Darwin) font_dir="$HOME/Library/Fonts" ;;
+        Linux)  font_dir="$HOME/.local/share/fonts" ;;
+        *)      echo "  skip fonts (unsupported OS)"; return ;;
+    esac
+
+    mkdir -p "$font_dir"
+
+    # Cascadia Code (includes Nerd Font variant)
+    if fc-list 2>/dev/null | grep -qi "Cascadia Code NF"; then
+        echo "  skip cascadia code (already installed)"
+    else
+        echo "  installing Cascadia Code NF..."
+        local tmpdir
+        tmpdir=$(mktemp -d)
+        curl -fsSL -o "$tmpdir/cascadia.zip" \
+            "https://github.com/microsoft/cascadia-code/releases/latest/download/CascadiaCode-2404.23.zip"
+        unzip -qo "$tmpdir/cascadia.zip" -d "$tmpdir/cascadia"
+        cp "$tmpdir"/cascadia/ttf/*.ttf "$font_dir/"
+        rm -rf "$tmpdir"
+        if [ "$(uname -s)" = "Linux" ]; then fc-cache -f; fi
+        echo "  done."
+    fi
+
+    # FiraCode Nerd Font
+    if fc-list 2>/dev/null | grep -qi "FiraCode"; then
+        echo "  skip fira code (already installed)"
+    else
+        echo "  installing FiraCode Nerd Font..."
+        local tmpdir
+        tmpdir=$(mktemp -d)
+        curl -fsSL -o "$tmpdir/firacode.zip" \
+            "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
+        unzip -qo "$tmpdir/firacode.zip" -d "$tmpdir/firacode"
+        cp "$tmpdir"/firacode/*.ttf "$font_dir/" 2>/dev/null || true
+        rm -rf "$tmpdir"
+        if [ "$(uname -s)" = "Linux" ]; then fc-cache -f; fi
+        echo "  done."
+    fi
+}
+
 # Install Ghostty
 install_ghostty() {
     if command -v ghostty &>/dev/null || [ -d "/Applications/Ghostty.app" ]; then
@@ -34,4 +78,5 @@ install_ghostty() {
     esac
 }
 
+install_fonts
 install_ghostty
