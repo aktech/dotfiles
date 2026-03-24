@@ -4,7 +4,14 @@ set -eu
 REPO="https://github.com/aktech/dotfiles.git"
 DOTFILES_DIR="$HOME/dev/dotfiles"
 
-echo "==> Installing dotfiles"
+cat <<'BANNER'
+      _       _    __ _ _
+   __| | ___ | |_ / _(_) | ___  ___
+  / _` |/ _ \| __| |_| | |/ _ \/ __|
+ | (_| | (_) | |_|  _| | |  __/\__ \
+  \__,_|\___/ \__|_| |_|_|\___||___/
+
+BANNER
 
 # Ensure curl is available (needed to install pixi)
 if ! command -v curl >/dev/null 2>&1; then
