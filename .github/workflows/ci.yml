@@ -19,5 +19,7 @@ jobs:
     - uses: prefix-dev/setup-pixi@a0af7a228712d6121d37aba47adf55c1332c9c2e # v0.9.4
     - name: Setup dotfiles
       run: pixi run setup
+      env:
+        DOTFILES_DESKTOP: "1"
     - name: Test setup
       run: pixi run test

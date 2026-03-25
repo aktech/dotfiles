@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -eu
 
-# Skip on headless/CI systems
-if [ -n "${CI:-}" ]; then
-    echo "  skip desktop apps (CI detected)"
+# Skip on CI unless DOTFILES_DESKTOP=1
+if [ -n "${CI:-}" ] && [ "${DOTFILES_DESKTOP:-}" != "1" ]; then
+    echo "  skip desktop apps (CI detected, set DOTFILES_DESKTOP=1 to override)"
     exit 0
 fi
 
