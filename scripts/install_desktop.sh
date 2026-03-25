@@ -63,9 +63,11 @@ install_ghostty() {
     case "$(uname -s)" in
         Darwin)
             echo "  installing ghostty..."
-            local tmpdir
+            local tmpdir version
             tmpdir=$(mktemp -d)
-            curl -fsSL -o "$tmpdir/Ghostty.dmg" "https://release.files.ghostty.org/latest/Ghostty.dmg"
+            version=$(curl -fsSL https://release.files.ghostty.org/appcast.xml \
+                | grep -o '<sparkle:shortVersionString>[^<]*' | tail -1 | sed 's/<[^>]*>//')
+            curl -fsSL -o "$tmpdir/Ghostty.dmg" "https://release.files.ghostty.org/${version}/Ghostty.dmg"
             hdiutil attach "$tmpdir/Ghostty.dmg" -quiet -mountpoint "$tmpdir/mnt"
             cp -R "$tmpdir/mnt/Ghostty.app" /Applications/
             hdiutil detach "$tmpdir/mnt" -quiet
