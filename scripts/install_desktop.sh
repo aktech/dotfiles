@@ -52,21 +52,6 @@ install_fonts() {
     fi
 }
 
-# Install Homebrew (macOS)
-install_homebrew() {
-    if command -v brew &>/dev/null; then
-        echo "  skip homebrew (already installed)"
-        return
-    fi
-    case "$(uname -s)" in
-        Darwin)
-            echo "  installing homebrew..."
-            NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
-            ;;
-    esac
-}
-
 # Install Ghostty
 install_ghostty() {
     if command -v ghostty &>/dev/null || [ -d "/Applications/Ghostty.app" ]; then
@@ -76,12 +61,15 @@ install_ghostty() {
 
     case "$(uname -s)" in
         Darwin)
-            if command -v brew &>/dev/null; then
-                echo "  installing ghostty via homebrew..."
-                brew install --cask ghostty
-            else
-                echo "  skip ghostty (homebrew not found, install manually from https://ghostty.org)"
-            fi
+            echo "  installing ghostty..."
+            local tmpdir
+            tmpdir=$(mktemp -d)
+            curl -fsSL -o "$tmpdir/Ghostty.dmg" "https://release.files.ghostty.org/latest/Ghostty.dmg"
+            hdiutil attach "$tmpdir/Ghostty.dmg" -quiet -mountpoint "$tmpdir/mnt"
+            cp -R "$tmpdir/mnt/Ghostty.app" /Applications/
+            hdiutil detach "$tmpdir/mnt" -quiet
+            rm -rf "$tmpdir"
+            echo "  done."
             ;;
         Linux)
             if [ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]; then
@@ -94,6 +82,5 @@ install_ghostty() {
     esac
 }
 
-install_homebrew
 install_fonts
 install_ghostty
