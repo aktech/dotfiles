@@ -75,11 +75,17 @@ install_ghostty() {
             echo "  done."
             ;;
         Linux)
-            if [ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]; then
-                echo "  installing ghostty via community script..."
-                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+            if command -v snap &>/dev/null; then
+                echo "  installing ghostty via snap..."
+                snap install ghostty --classic
+            elif command -v pacman &>/dev/null; then
+                echo "  installing ghostty via pacman..."
+                pacman -S --noconfirm ghostty
+            elif command -v apk &>/dev/null; then
+                echo "  installing ghostty via apk..."
+                apk add ghostty
             else
-                echo "  skip ghostty (no display detected)"
+                echo "  skip ghostty (no supported package manager found, see https://ghostty.org/docs/install)"
             fi
             ;;
     esac
