@@ -77,7 +77,7 @@ install_ghostty() {
         Linux)
             if command -v snap &>/dev/null; then
                 echo "  installing ghostty via snap..."
-                snap install ghostty --classic
+                sudo snap install ghostty --classic
             elif command -v pacman &>/dev/null; then
                 echo "  installing ghostty via pacman..."
                 pacman -S --noconfirm ghostty
