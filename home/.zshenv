@@ -7,6 +7,7 @@ export PATH="$HOME/.pixi/bin:$PATH"
 # Activate pixi project environment if dotfiles exist
 if [ -f "$HOME/dev/dotfiles/pyproject.toml" ]; then
     eval "$(pixi shell-hook --manifest-path "$HOME/dev/dotfiles/pyproject.toml" 2>/dev/null)" 2>/dev/null || true
+unset PIXI_PROJECT_MANIFEST
 fi
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

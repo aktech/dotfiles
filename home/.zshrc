@@ -147,3 +147,9 @@ export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:/opt/homebrew/opt/ruby/bin:$P
 
 # opencode
 export PATH=/Users/aktech/.opencode/bin:$PATH
+# Load environment variables
+if [ -f "$HOME/.env" ]; then
+    source "$HOME/.env"
+fi
+
+eval "$(mise activate zsh)"
