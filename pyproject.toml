@@ -20,7 +20,6 @@ dotfiles = { path = ".", editable = true }
 [tool.pixi.dependencies]
 python = ">=3.11"
 git = "*"
-tmux = "3.6a.*"
 nvim = ">=0.11.6,<0.12"
 starship = "*"
 wget = "*"
