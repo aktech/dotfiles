@@ -8,7 +8,7 @@ from pathlib import Path
 DOTFILES_HOME = Path(__file__).resolve().parent.parent / "home"
 TARGET_HOME = Path.home()
 
-REQUIRED_TOOLS = ["git", "tmux", "nvim", "starship", "wget", "htop", "curl", "tree"]
+REQUIRED_TOOLS = ["git", "nvim", "starship", "wget", "htop", "curl", "tree"]
 
 errors = []
 
@@ -43,7 +43,6 @@ def check_tools_work() -> None:
     print("\nChecking tools execute...")
     for tool, args in [
         ("git", ["--version"]),
-        ("tmux", ["-V"]),
         ("nvim", ["--version"]),
         ("starship", ["--version"]),
     ]:
